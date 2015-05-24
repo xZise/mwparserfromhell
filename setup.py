@@ -21,6 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import codecs
 import os
 import sys
 
@@ -36,7 +37,7 @@ from setuptools import setup, find_packages, Extension
 from mwparserfromhell import __version__
 from mwparserfromhell.compat import py26, py3k
 
-with open("README.rst", **{'encoding':'utf-8'} if py3k else {}) as fp:
+with codecs.open("README.rst", encoding='utf-8') as fp:
     long_docs = fp.read()
 
 tokenizer = Extension("mwparserfromhell.parser._tokenizer",
